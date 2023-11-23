@@ -18,7 +18,17 @@
 
         </div>
         <div class="lower-footer">
-            addio
+            <div class="footer-button">
+                <button class="btn btn-primary">Sign-up Now!</button>
+            </div>
+            <div class="logo-list">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li v-for="elem, indexElem in lowerFooterItems" :key="elem.logo" class="image-container">
+                        <img :src="getLogo(indexElem)">
+                    </li>
+                </ul>
+            </div>
         </div>
     </footer>
 </template>
@@ -147,9 +157,37 @@ export default {
                         },
                     ]
                 },
+            ],
+
+            lowerFooterItems: [
+                {
+                    logo: '-facebook'
+                },
+
+                {
+                    logo: '-periscope'
+                },
+
+                {
+                    logo: '-pinterest'
+                },
+
+                {
+                    logo: '-twitter'
+                },
+
+                {
+                    logo: '-youtube'
+                },
             ]
         }
-    }
+    },
+
+    methods: {
+        getLogo: function (index) {
+            return `../src/assets/img/footer${this.lowerFooterItems[index].logo}.png`;
+          },
+    },
     
 }
 </script>
@@ -167,6 +205,7 @@ export default {
 
                     h3{
                         color: white;
+                        margin-bottom: .5rem;
                     }
 
                     li{
@@ -183,5 +222,21 @@ export default {
 
     .lower-footer {
         background-color: gray;
+        margin-top: 2rem;
+        @include flex($direction: row, $justify-content: space-around, $align-items: center);
+
+        .logo-list {     
+            @include flex($direction: row, $justify-content: space-between, $align-items: center);
+            gap: 1rem;      
+            ul {
+            @include flex($direction: row, $justify-content: space-between, $align-items: center);
+            gap: 0.5rem;
+            li {
+                list-style-type: none;
+                }
+            }
+        }
+
+        
     }
 </style>
