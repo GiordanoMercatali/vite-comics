@@ -93,7 +93,7 @@ ul {
             width: 100%;
             height: 1rem;
             position: relative;
-            top: 1.5rem;
+            top: 1.6rem;
             left: 0;
             display: none;
         }
