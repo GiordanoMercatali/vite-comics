@@ -7,7 +7,8 @@
         <nav>
             <ul>
                 <li v-for="item in navItems" :key="item.title">
-                <a href="">{{ item.title }}</a>
+                <a href="">{{ item.title }}<div class="underline"></div></a>
+                
             </li>
             </ul>
         </nav>
@@ -71,6 +72,11 @@ export default {
 header {
     margin-top: 2rem;
     @include flex($direction: row, $justify-content: space-around, $align-items: center);
+
+        img{
+            width: 75%;
+            height: 75%;
+        }
 }
 
 ul {
@@ -82,8 +88,21 @@ ul {
         text-decoration: none;
         color: black;
 
+        .underline{
+            background-color: blue;
+            width: 100%;
+            height: 1rem;
+            position: relative;
+            top: 1.5rem;
+            left: 0;
+            display: none;
+        }
+
         &:hover {
-        color: blue;
+            color: blue;
+            .underline{
+                display: inline-block;
+            }
         }
     }
 
