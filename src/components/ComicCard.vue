@@ -2,10 +2,10 @@
 
 export default {
   props: {
-    propThumb: string,
-    propPrice: string,
-    propSeries: string,
-    propType: string
+    propThumb: String,
+    propPrice: String,
+    propSeries: String,
+    propType: String
   },
 };
 </script>
@@ -25,12 +25,13 @@ export default {
     height: 100%;
 
     img {
-        width: 100%;
+        width: 10rem;
+        height: 15rem;
     }
 
     h3 {
         text-align: center;
-        color: $primary;
+        color: $primary-color;
     }
 
     /* &.comic-book {
