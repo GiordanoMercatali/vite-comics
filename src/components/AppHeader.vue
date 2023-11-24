@@ -71,7 +71,7 @@ export default {
 @use "../style/partials/variables" as *;
 
 header {
-    margin-top: 2rem;
+    padding: 2rem 0;
     @include flex($direction: row, $justify-content: space-around, $align-items: center);
 
         img{

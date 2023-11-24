@@ -1,6 +1,13 @@
 <template lang="">
     <main>
-        <h2>Product List</h2>
+
+        <div class="jumbotron">
+            <img src="../assets/img/jumbotron.jpg" alt="">
+        </div>
+
+        <div class="section-title">
+            <h2>Product List</h2>
+        </div>
 
         <div class="section products">
             <div class="row">
@@ -14,7 +21,7 @@
             <ul>
                     <li v-for="elem, indexElem in blueSectionItems" :key="elem.img" class="image-container">
                         <span>{{elem.text}}</span>
-                        <a href=""><img :src="getImage(indexElem)"></a>
+                        <a href=""><img :src="getIcons(indexElem)"></a>
                     </li>
                 </ul>
         </div>
@@ -133,7 +140,7 @@ export default {
     components: { ComicCard },
 
     methods: {
-        getImage: function (index) {
+        getIcons: function (index) {
             return `../src/assets/img/buy-${this.blueSectionItems[index].img}`;
           },
     },
@@ -144,9 +151,24 @@ export default {
 @use "../style/partials/mixins" as *;
 @use "../style/partials/variables" as *;
 
+    .jumbotron{
+        img {
+            max-width: 100%;
+        }
+    }
+
     main{
         background-color: $main-section-color;
         color: white;
+
+        .section-title{
+            background-color: $primary-color;
+            max-width: 12rem;
+            padding: 1rem;
+            position: relative;
+            bottom: 1.5rem;
+            left: 0;
+        }
 
         .products{
             margin-top: 2rem;
