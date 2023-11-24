@@ -11,9 +11,11 @@
                         </li>
                     </ul>
                 </div>
-            </div>
 
-            <div class="row">
+                <div class="col">
+                    <img src="../assets/img/dc-logo-bg.png" alt="">
+                    <!-- <img :src="getImageUrl(dc-logo-bg.png)" alt=""> -->
+                </div>
             </div>
 
         </div>
@@ -25,7 +27,7 @@
                 <h3>Follow Us</h3>
                 <ul>
                     <li v-for="elem, indexElem in lowerFooterItems" :key="elem.logo" class="image-container">
-                        <img :src="getLogo(indexElem)">
+                        <a href=""><img :src="getLogo(indexElem)"></a>
                     </li>
                 </ul>
             </div>
@@ -187,6 +189,10 @@ export default {
         getLogo: function (index) {
             return `../src/assets/img/footer${this.lowerFooterItems[index].logo}.png`;
           },
+
+        getImageUrl: function  (imgName) {
+            return new URL (`../assets/img/${imgName}`, import.meta.url).href;
+        }
     },
     
 }
@@ -194,14 +200,18 @@ export default {
 
 <style scoped lang="scss">
 @use "../style/partials/mixins" as *;
+@use "../style/partials/variables" as *;
 
     .upper-footer {
         background-image: url("../assets/img/footer-bg.jpg");
+        background-size: cover;
 
             .row{
-                @include flex($direction: row, $justify-content: space-around, $align-items: start);
+                @include flex($direction: row, $justify-content: center, $align-items: start);
                 flex-wrap: wrap;
-                width: 50%;
+                width: 60%;
+                margin: 0 auto;
+                gap: 1rem;
 
                     h3{
                         color: white;
@@ -221,7 +231,7 @@ export default {
     }
 
     .lower-footer {
-        background-color: gray;
+        background-color: $footer-color;
         margin-top: 2rem;
         @include flex($direction: row, $justify-content: space-around, $align-items: center);
 
