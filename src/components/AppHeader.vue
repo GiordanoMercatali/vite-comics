@@ -92,9 +92,9 @@ ul {
         .underline{
             background-color: $primary-color;
             width: 100%;
-            height: 1rem;
+            height: .5rem;
             position: relative;
-            top: 1.6rem;
+            top: 1.7rem;
             left: 0;
             display: none;
         }
