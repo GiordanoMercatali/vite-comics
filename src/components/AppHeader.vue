@@ -68,6 +68,7 @@ export default {
 
 <style scoped lang="scss">
 @use "../style/partials/mixins" as *;
+@use "../style/partials/variables" as *;
 
 header {
     margin-top: 2rem;
@@ -89,7 +90,7 @@ ul {
         color: black;
 
         .underline{
-            background-color: blue;
+            background-color: $primary-color;
             width: 100%;
             height: 1rem;
             position: relative;
@@ -99,7 +100,7 @@ ul {
         }
 
         &:hover {
-            color: blue;
+            color: $primary-color;
             .underline{
                 display: inline-block;
             }
