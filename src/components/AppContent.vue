@@ -167,7 +167,8 @@ export default {
             padding: 1rem;
             position: relative;
             bottom: 1.5rem;
-            left: 0;
+            left: 1rem;
+            text-align: center;
         }
 
         .products{
