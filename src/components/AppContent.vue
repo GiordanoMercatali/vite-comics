@@ -4,7 +4,7 @@
         <div class="section blue-line">
             <ul>
                     <li v-for="elem, indexElem in blueSectionItems" :key="elem.img" class="image-container">
-                        <span>{{elem.img}}</span>
+                        <span>{{elem.text}}</span>
                         <a href=""><img :src="getImage(indexElem)"></a>
                     </li>
                 </ul>
@@ -18,23 +18,28 @@ export default {
         return {
             blueSectionItems: [
                 {
-                    img: 'comics-digital-comics'
+                    img: 'comics-digital-comics.png',
+                    text: "DIGITAL COMICS",
                 },
 
                 {
-                    img: 'comics-merchandise'
+                    img: 'comics-merchandise.png',
+                    text: "DC MERCHANDISE",
                 },
 
                 {
-                    img: 'comics-shop-locator'
+                    img: 'comics-shop-locator.png',
+                    text: "COMIC SHOP LOCATOR",
                 },
 
                 {
-                    img: 'comics-subscriptions'
+                    img: 'comics-subscriptions.png',
+                    text: "SUBSCRIPTION",
                 },
 
                 {
-                    img: 'dc-power-visa'
+                    img: 'dc-power-visa.svg',
+                    text: "DC POWER VISA",
                 },
             ]
             
@@ -43,7 +48,7 @@ export default {
 
     methods: {
         getImage: function (index) {
-            return `../src/assets/img/buy-${this.blueSectionItems[index].img}.png`;
+            return `../src/assets/img/buy-${this.blueSectionItems[index].img}`;
           },
     },
 }
@@ -67,9 +72,12 @@ export default {
                 li {
                     @include flex();
                     gap: 1rem;
-                    img{
-                        height: 50%;
+                    
+                    a {
+                        img {
                         width: 50%;
+                        max-width: 200px;
+                    }
                     }
                 }
             }
